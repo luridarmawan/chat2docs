@@ -7,6 +7,21 @@ Repositori ini berisi sistem AI yang menggunakan teknologi chat untuk berinterak
 1. Salin file yang ingin digunakan ke dalam folder `docs/nama_dokumen_kamu` di repositori ini.
 2. Modifikasi konfigurasi yang diperlukan di file `.env` sesuai dengan kebutuhan Anda.
 
+## Environment
+
+Beberapa konfigurasi bisa diubah melalui file `.env`.
+
+| Variabel | Deskripsi |
+|---|---|
+| DOCUMENT_NAME | Nama dokumen sesuai dengan nama folder yang kamu buat di `docs/nama_dokumen_kamu` |
+| OPENAI_API_KEY | API Key OpenAI yang bisa didapat dari  https://platform.openai.com/account/api-keys |
+| ANSWERING_MODE | Ada beberapa pilihan mode answering: `prompt`, `retrieval`, `conversational`, `similarity search`, `similarity with chatcompletion`<br>Masing-masing mempunyai kelebihan dan kekurangannya. |
+| DB_TYPE | Platform ini mendukung database vector: `chromadb` atau `faiss`. |
+| WEB_FRAMEWORK | Saat ini tersedia 2 mode web framework: `gradio` dan `flask` |
+| PORT | Port untuk web server. Default menggunakan port 8088 |
+
+
+
 ## Instalasi dan Konfigurasi
 
 1. Pastikan Docker telah terinstal di komputer Anda.
@@ -17,7 +32,7 @@ Repositori ini berisi sistem AI yang menggunakan teknologi chat untuk berinterak
     docker build . -t chat2doc-ex
     ```
 
-3. Setelah proses pembangunan selesai, jalankan perintah berikut untuk menjalankan aplikasi:
+3. Setelah proses *build* selesai, jalankan perintah berikut untuk menjalankan aplikasi:
 
     ```
     docker run -it --rm --name c2d -p 8088:8088 chat2doc-ex
