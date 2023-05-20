@@ -35,6 +35,8 @@ Several configurations can be modified through the  `.env`.
     docker build . -t chat2doc-ex
     ```
 
+    ![build](files/build-01.png)
+
 3. After the build process is complete, run the following command to start the application:
 
     ```
@@ -43,11 +45,13 @@ Several configurations can be modified through the  `.env`.
 
     If the process runs smoothly, a web server will be active on port 8088.
 
+    ![build](files/run-01.png)
+
 4. Once the web server is running, you can access the application through the browser by opening the following link: [http://localhost:8088](http://localhost:8088)
 
-The interface will look similar to this:
+    The interface will look similar to this:
 
-![chat2docs](screenshot.png)
+    ![chat2docs](screenshot.png)
 
 
 ## Notes

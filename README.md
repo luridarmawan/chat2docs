@@ -35,6 +35,8 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
     docker build . -t chat2doc-ex
     ```
 
+    ![build](files/build-01.png)
+
 3. Setelah proses *build* selesai, jalankan perintah berikut untuk menjalankan aplikasi:
 
     ```
@@ -43,11 +45,13 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
 
     Jika proses berjalan lancar, akan aktif sebuah web server yang berjalan di port 8088.
 
+    ![build](files/run-01.png)
+
 4. Setelah web server berjalan, Anda dapat mengaksesnya aplikasi melalui browser dengan membuka tautan berikut: [http://localhost:8088](http://localhost:8088)
 
-Tampilannya akan kurang lebih seperti ini:
+    Tampilannya akan kurang lebih seperti ini:
 
-![chat2docs](screenshot.png)
+    ![chat2docs](screenshot.png)
 
 
 ## Catatan
