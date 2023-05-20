@@ -1,6 +1,6 @@
 # Create a Chatbot for Your Data/Documents
 
-Repositori ini berisi sistem AI yang menggunakan teknologi chat untuk berinteraksi dengan data/dokumen. Sistem ini dibangun dengan menggunakan Docker untuk mempermudah penggunaan dan instalasi, sehingga tidak perlu lagi melakukan instalasi software/plugin/package dependensi satu-persatu.
+Repositori ini berisi sistem AI *(Artificial Intelligence)* yang menggunakan teknologi chat untuk berinteraksi dengan data/dokumen. Sistem ini dibangun dengan menggunakan Docker untuk mempermudah penggunaan dan instalasi, sehingga tidak perlu lagi melakukan instalasi software/plugin/package dependensi satu-persatu.
 
 ## Penggunaan
 
@@ -44,20 +44,11 @@ Kurang lebih tampilannya akan seperti berikut:
 
 ![chat2docs](screenshot.png)
 
-## Kontribusi
 
-Jika Anda ingin berkontribusi pada proyek ini, Anda dapat melakukan langkah-langkah berikut:
+## Catatan
 
-1. Fork repositori ini.
-2. Buat branch baru untuk fitur atau perbaikan yang ingin Anda tambahkan (`git checkout -b fitur-anda`).
-3. Lakukan perubahan yang diperlukan.
-4. Commit perubahan Anda (`git commit -am 'Menambahkan fitur baru'`).
-5. Push ke branch yang telah Anda buat (`git push origin fitur-anda`).
-6. Buat Pull Request dari branch Anda ke branch `master` repositori ini.
-
-## Lisensi
-
-Proyek ini menggunakan lisensi MIT. Silakan lihat berkas [LISENSI](LISENSI) untuk informasi lebih lanjut.
+1. Pertama kali melakukan build akan perlu waktu yang cukup lama, karena docker akan mengunduh image container siap pakai yang berukuran kira-kira 7 GB. Pastikan bandwidth dan kuota anda mencukupi.
+2. Setiap ada perubahan di dokumen ataupun konfigurasi, Kamu harus build ulang docker image-nya. Jika anda memahami lebih dalam tentang docker..
 
 ---
 
