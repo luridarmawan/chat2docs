@@ -1,11 +1,15 @@
 # Create a Chatbot for Your Data/Documents
 
+| [Indonesian](README.md) | [English](README-EN.md) |
+
 Repositori ini berisi Kecerdasan Buatan AI *(Artificial Intelligence)* yang menggunakan media *chat* untuk berinteraksi dengan data/dokumen. Sistem ini dibangun menggunakan Docker untuk mempermudah penggunaan dan instalasi sehingga tidak perlu lagi melakukan instalasi perangkat lunak/plugin/paket dependensi satu-persatu.
+
 
 ## Penggunaan
 
 1. Salin file yang ingin gunakan ke dalam folder `docs/nama_dokumen_anda` di repositori ini.
 2. Sesuaikan konfigurasi yang diperlukan dalam file `.env` sesuai dengan kebutuhan Anda.
+
 
 ## Environment
 
@@ -19,7 +23,6 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
 | DB_TYPE | Platform ini mendukung database vector: `chromadb` atau `faiss`. |
 | WEB_FRAMEWORK | Saat ini tersedia 2 mode web framework: `gradio` dan `flask` |
 | PORT | Port untuk server web. Default menggunakan port 8088 |
-
 
 
 ## Instalasi dan Konfigurasi
@@ -42,7 +45,7 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
 
 4. Setelah web server berjalan, Anda dapat mengaksesnya aplikasi melalui browser dengan membuka tautan berikut: [http://localhost:8088](http://localhost:8088)
 
-Tampilannya akan kurang lebih seperti ini::
+Tampilannya akan kurang lebih seperti ini:
 
 ![chat2docs](screenshot.png)
 
