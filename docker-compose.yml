@@ -1,0 +1,10 @@
+version: "3"
+services:
+  chat2doc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8088
+    ports:
+      - "8088:8088"
