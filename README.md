@@ -25,7 +25,7 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
 
 | Variabel | Deskripsi |
 |---|---|
-| DOCUMENT_NAME | Nama dokumen sesuai dengan nama folder yang Anda buat di `docs/nama_dokumen_anda` |
+| DOCUMENT_NAME | Nama dokumen sesuai dengan nama folder yang Anda buat di `docs/nama_dokumen_anda`.<br>Tersedia contoh dokumen: `example` dan `pemilu2024`. |
 | OPENAI_API_KEY | API Key OpenAI yang dapat diperoleh dari  https://platform.openai.com/account/api-keys |
 | ANSWERING_MODE | Mode jawaban default. Terdapat beberapa mode answering yang tersedia: `prompt`, `retrieval`, `conversational`, `similarity search`, dan `similarity with chatcompletion`. <br>Masing-masing mempunyai kelebihan dan kekurangannya. |
 | DB_TYPE | Platform ini mendukung database vector: `chromadb` atau `faiss`. |
