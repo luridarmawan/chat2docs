@@ -1,4 +1,4 @@
-# Create a Chatbot for Your Data/Documents
+# Create a Chatbot for Your Documents/Data
 
 | [Indonesian](README.md) | [English](README-EN.md) |
 
@@ -52,6 +52,13 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
     Tampilannya akan kurang lebih seperti ini:
 
     ![chat2docs](screenshot.png)
+
+
+## Docker compose
+
+```bash
+docker-compose up --build
+```
 
 
 ## Catatan
