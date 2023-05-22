@@ -93,7 +93,14 @@ docker-compose up --build
 
 Below is a screenshot example when Chat2Docs is active using the `pemilu2024` document:
 
-![chat2docs](files/doc-pemilu.png)
+### with flask
+
+   ![chat2docs](files/doc-pemilu.png)
+
+### with gradio
+
+   ![chat2docs](files/doc-pemilu-gradio.png)
+
 
 
 ## Notes

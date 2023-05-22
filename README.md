@@ -92,7 +92,13 @@ docker-compose up --build
 
 Dibawah ini contoh tangkapan layar ketika chat2doc sedang aktif menggunakan dokumen `pemilu2024`:
 
-![chat2docs](files/doc-pemilu.png)
+### menggunakan flask
+
+   ![chat2docs](files/doc-pemilu.png)
+
+### menggunakan gradio
+
+   ![chat2docs](files/doc-pemilu-gradio.png)
 
 
 ## Catatan
