@@ -2,68 +2,105 @@
 
 | [Indonesian](README.md) | [English](README-EN.md) |
 
-This repository contains an Artificial Intelligence (AI) system that utilizes chat technology to interact with data/documents. The system is built using Docker to simplify usage and installation, eliminating the need to install software/plugins/package dependencies one by one.
 
+[Chat2Docs](https://carik.id/chat2docs/) is an application that allows you to ask questions and get answers based on available documents. You can use documents in PDF, DOCX, CSV, MD, or TXT formats. This application is very useful for searching for information contained in laws, regulations, company SOPs, tutorials, and other documents.
 
-## Usage
+The system is built using Docker to simplify usage and installation, eliminating the need for individual software/plugin/dependency package installations.
 
-1. Copy the files you want to use into the `docs/nama_dokumen_anda` folder in this repository.
-2. Modify the necessary configurations in the .env file according to your needs.
+## Key Features
+
+1. Ask questions and get relevant answers from documents.
+2. Supports various document formats, including PDF, DOCX, CSV, MD, and TXT.
+3. Simple and user-friendly webchat interface.
+
+## System Requirements
+
+Before using Chat2Docs, make sure you meet the following requirements:
+1. Have [Docker](https://www.docker.com/) installed on your device.
 
 
 ## Environment
 
-Several configurations can be modified through the  `.env`.
+Some configurations can be modified through the `.env` file.
 
 | Variable | Description |
 |---|---|
-| DOCUMENT_NAME | Document name corresponding to the folder name you created in `docs/nama_dokumen_anda` |
+| DOCUMENT_NAME | Document name according to the folder name you create in `docs/nama_dokumen_anda` |
 | OPENAI_API_KEY | OpenAI API Key obtained from https://platform.openai.com/account/api-keys |
-| ANSWERING_MODE | There are several available answering modes: `prompt`, `retrieval`, `conversational`, `similarity search`, and `similarity with chatcompletion`. <br>Each has its own advantages and disadvantages. |
-| DB_TYPE | Supported database vector: `chromadb` atau `faiss`. |
-| WEB_FRAMEWORK | Currently, there are two web framework modes available: `gradio` dan `flask` |
-| PORT | Port for the web server. The default is port 8088. |
+| ANSWERING_MODE | Default answering mode. There are several available answering modes: `prompt`, `retrieval`, `conversational`, `similarity search`, dan `similarity with chatcompletion`. <br>Each has its advantages and disadvantages. |
+| DB_TYPE | This platform supports vector databases: `chromadb` or `faiss`. |
+| WEB_FRAMEWORK | Currently, there are 2 web framework modes available: `gradio` dan `flask`. API tersedia jika menggunakan framework. |
+| PORT | Port for the web server. Default is port 8088 |
 
 
-## Installation and Configuration
+## Installation and Usage
 
-1. Ensure that Docker is installed on your computer.
-<br>Prepare approximately 8GB of storage space to download the required Docker image.
-2. Run the following command to build the Docker image:
+1. Make sure [Docker](https://www.docker.com/) is installed on your computer.
+   
+   Allocate approximately 8GB of storage space to download the required Docker image.
 
-    ```
-    docker build . -t chat2doc-ex
-    ```
+2. Clone this repository from the terminal/console using the command:
 
-    ![build](files/build-01.png)
+   ```bash
+   git clone https://github.com/luridarmawan/chat2docs.git
+   ```
 
-3. After the build process is complete, run the following command to start the application:
+3. Copy the file you want to use into the `docs/nama_dokumen_anda` folder in this repository. Chat2Docs supports PDF, DOCX, MD, or TXT document formats.
 
-    ```
-    docker run -it --rm --name c2d -p 8088:8088 chat2doc-ex
-    ```
+   Currently, there are example folders available: `example` and `pemilu2024`.
 
-    If the process runs smoothly, a web server will be active on port 8088.
+4. Run the following command to build the Docker image:
 
-    ![build](files/run-01.png)
+   ```bash
+   docker build . -t chat2doc-ex
+   ```
 
-4. Once the web server is running, you can access the application through the browser by opening the following link: [http://localhost:8088](http://localhost:8088)
+   ![build](files/build-01.png)
 
-    The interface will look similar to this:
+5. Once the build process is completed, run the following command to start the application:
 
-    ![chat2docs](screenshot.png)
+   ```
+   docker run -it --rm --name c2d -p 8088:8088 chat2doc-ex
+   ```
+
+   If the process runs successfully, a web server will be active on port 8088.
+
+   ![build](files/run-01.png)
+
+6. After the web server is running, you can access the application through a browser by opening the following link: [http://localhost:8088](http://localhost:8088)
+
+   The interface will look similar to this:
+
+   ![chat2docs](files/screenshot.png)
+
+7. Type your question in the provided column and press _Enter_.
+8. Chat2Docs will extract relevant information from the document and provide the best answer to your question.
+
 
 ## Docker compose
+
+Alternatively, you can use Docker Compose by running the following Docker command:
 
 ```bash
 docker-compose up --build
 ```
+   The result will be similar to this:
+
+   ![chat2docs](files/docker-compose.png)
+
+
+## Showcase
+
+Below is a screenshot example when Chat2Docs is active using the `pemilu2024` document:
+
+![chat2docs](files/doc-pemilu.png)
+
 
 ## Notes
 
-1. The *initial build* process may take a considerable amount of time as Docker will download a ready-to-use container image with a size of approximately 7GB. Ensure that your bandwidth and quota are sufficient.
-2. Whenever there are changes to the documents or configurations, you need to rebuild the Docker image, unless you have a deeper understanding of Docker. Alternatively, you can make configuration changes through the Docker command line.
+1. The initial build process may take a considerable amount of time because Docker will download a ready-to-use container image with a size of approximately 7 GB. Make sure your bandwidth and quota are sufficient.
+2. Whenever there are changes to the document or configuration, you need to rebuild the Docker image unless you have a deeper understanding of Docker. OR, you can make configuration changes through the Docker command line.
 
 ---
 
-*Note: If you encounter any issues or have questions, please create an _issue_ in this repository.*
+*Catatan: Jika Anda mengalami masalah atau memiliki pertanyaan, silakan buat *issue* di repositori ini.*
