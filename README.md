@@ -2,13 +2,21 @@
 
 | [Indonesian](README.md) | [English](README-EN.md) |
 
-Repositori ini berisi Kecerdasan Buatan AI *(Artificial Intelligence)* yang menggunakan media *chat* untuk berinteraksi dengan data/dokumen. Sistem ini dibangun menggunakan Docker untuk mempermudah penggunaan dan instalasi sehingga tidak perlu lagi melakukan instalasi perangkat lunak/plugin/paket dependensi satu-persatu.
 
+[Chat2Docs](https://carik.id/chat2docs/) ini adalah aplikasi yang memungkinkan Anda untuk mengajukan pertanyaan dan mendapatkan jawaban berdasarkan dokumen yang tersedia. Anda dapat menggunakan dokumen dalam format PDF, DOCX, CSV, MD, atau TXT. Aplikasi ini sangat berguna untuk mencari informasi yang terkandung dalam undang-undang, peraturan, SOP perusahaan, tutorial, dan dokumen lainnya.
 
-## Penggunaan
+Sistem ini dibangun menggunakan Docker untuk mempermudah penggunaan dan instalasi sehingga tidak perlu lagi melakukan instalasi perangkat lunak/plugin/paket dependensi satu-persatu.
 
-1. Salin file yang ingin gunakan ke dalam folder `docs/nama_dokumen_anda` di repositori ini.
-2. Sesuaikan konfigurasi yang diperlukan dalam file `.env` sesuai dengan kebutuhan Anda.
+## Fitur Utama
+
+1. Mengajukan pertanyaan dan mendapatkan jawaban yang relevan dari dokumen.
+2. Mendukung berbagai format dokumen, termasuk PDF, DOCX, CSV, MD, dan TXT.
+3. Antarmuka _webchat_ yang sederhana dan mudah digunakan.
+
+## Persyaratan Sistem
+
+Sebelum menggunakan Chat2Docs, pastikan Anda telah memenuhi persyaratan berikut:
+1. Sudah memiliki [Docker](https://www.docker.com/) diinstal di perangkat Anda
 
 
 ## Environment
@@ -19,46 +27,72 @@ Beberapa konfigurasi dapat diubah melalui file `.env`.
 |---|---|
 | DOCUMENT_NAME | Nama dokumen sesuai dengan nama folder yang Anda buat di `docs/nama_dokumen_anda` |
 | OPENAI_API_KEY | API Key OpenAI yang dapat diperoleh dari  https://platform.openai.com/account/api-keys |
-| ANSWERING_MODE | Terdapat beberapa mode answering yang tersedia: `prompt`, `retrieval`, `conversational`, `similarity search`, dan `similarity with chatcompletion`. <br>Masing-masing mempunyai kelebihan dan kekurangannya. |
+| ANSWERING_MODE | Mode jawaban default. Terdapat beberapa mode answering yang tersedia: `prompt`, `retrieval`, `conversational`, `similarity search`, dan `similarity with chatcompletion`. <br>Masing-masing mempunyai kelebihan dan kekurangannya. |
 | DB_TYPE | Platform ini mendukung database vector: `chromadb` atau `faiss`. |
 | WEB_FRAMEWORK | Saat ini tersedia 2 mode web framework: `gradio` dan `flask` |
 | PORT | Port untuk server web. Default menggunakan port 8088 |
 
 
-## Instalasi dan Konfigurasi
 
-1. Pastikan Docker telah terinstall di komputer Anda.
-<br>Persiapkan ruang penyimpanan sebesar lebih kurang 8GB untuk mengunduh image docker yang dibutuhkan.
-2. Jalankan perintah berikut untuk membangun image Docker:
+## Instalasi dan Penggunaan
 
+1. Pastikan [Docker](https://www.docker.com/) telah terinstall di komputer Anda.
+   
+   Persiapkan ruang penyimpanan sebesar lebih kurang 8GB untuk mengunduh image docker yang dibutuhkan.
+
+2. _Clone_ repository ini dari dari terminal/console dengan perintah 
+    ```bash
+    git clone https://github.com/luridarmawan/chat2docs.git
     ```
-    docker build . -t chat2doc-ex
-    ```
+3. Salin file yang ingin gunakan ke dalam folder `docs/nama_dokumen_anda` di repositori ini. Chat2Docs mendukung format dokumen pdf, docx, md, atau txt.
 
-    ![build](files/build-01.png)
+   Saat ini tersedia contoh folder `example` dan `pemilu2024`.
 
-3. Setelah proses *build* selesai, jalankan perintah berikut untuk menjalankan aplikasi:
+4. Jalankan perintah berikut untuk membangun image Docker:
 
-    ```
-    docker run -it --rm --name c2d -p 8088:8088 chat2doc-ex
-    ```
+   ```bash
+   docker build . -t chat2doc-ex
+   ```
 
-    Jika proses berjalan lancar, akan aktif sebuah web server yang berjalan di port 8088.
+   ![build](files/build-01.png)
 
-    ![build](files/run-01.png)
+5. Setelah proses *build* selesai, jalankan perintah berikut untuk menjalankan aplikasi:
 
-4. Setelah web server berjalan, Anda dapat mengaksesnya aplikasi melalui browser dengan membuka tautan berikut: [http://localhost:8088](http://localhost:8088)
+   ```
+   docker run -it --rm --name c2d -p 8088:8088 chat2doc-ex
+   ```
 
-    Tampilannya akan kurang lebih seperti ini:
+   Jika proses berjalan lancar, akan aktif sebuah web server yang berjalan di port 8088.
 
-    ![chat2docs](screenshot.png)
+   ![build](files/run-01.png)
+
+6. Setelah web server berjalan, Anda dapat mengaksesnya aplikasi melalui browser dengan membuka tautan berikut: [http://localhost:8088](http://localhost:8088)
+
+   Tampilannya akan kurang lebih seperti ini:
+
+   ![chat2docs](files/screenshot.png)
+
+7. Ketik pertanyaan Anda pada kolom yang disediakan dan tekan _Enter_.
+8. Chat2Docs akan mengekstrak informasi yang relevan dari dokumen dan memberikan jawaban terbaik untuk pertanyaan Anda
 
 
 ## Docker compose
 
+Alternatif bisa menggunakan docker compose, bisa dilakukan dengan menjalankan perintah docker berikut:
+
 ```bash
 docker-compose up --build
 ```
+   Hasilnya akan kurang lebih seperti ini:
+
+   ![chat2docs](files/docker-compose.png)
+
+
+## Showcase
+
+Dibawah ini contoh tangkapan layar ketika chat2doc sedang aktif menggunakan dokumen `pemilu2024`:
+
+![chat2docs](files/doc-pemilu.png)
 
 
 ## Catatan

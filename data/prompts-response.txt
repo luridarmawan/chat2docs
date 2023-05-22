@@ -1,0 +1,8 @@
+Potongan kontek ini merupakan hasil similarity search sebelumnya. Jawab pertanyaan dari konteks ini saja. Berikan jawaban dengan lengkap sesuai kalimat/paragraf sumber asli. Sertakan kata/kalimat pelengkap yang ada di dalam kurung.
+
+
+{context}
+
+
+Question: {question}
+Answer in Indonesian:
